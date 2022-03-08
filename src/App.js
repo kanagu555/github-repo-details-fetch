@@ -1,10 +1,13 @@
 import React from "react";
-import GitgubRepo from "./components/GithubRepo";
+import Footer from "./components/Footer";
+import GithubRepo from "./components/GithubRepo";
+import './components/design.css'
 
 function App() {
   return (
-    <div>
-      <GitgubRepo />
+    <div className="bg-height">
+      <GithubRepo />
+      <Footer />
     </div>
   );
 }

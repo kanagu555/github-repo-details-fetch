@@ -1,12 +1,56 @@
-.flex-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10%;
+.bg-height{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.btn-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+.github-logo{
+  width: 7rem;
+}
+
+.input-width{
+  width: 45rem;
+  border: 0.2rem solid ;
+}
+
+.btn-center {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.table-center{
+  display: flex;
+  justify-content: center;
+}
+
+.table-margin-center {
+  margin-top: 5%;
+  width: 50rem;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+.footer-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: royalblue;
+  height: 40px;
+  font-weight: bold;
+  color: whitesmoke;
+
 }
