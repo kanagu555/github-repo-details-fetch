@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
 import "./design.css";
 import GithubRepoOutput from "./GithubRepoOutput";
-import github from  "./images/github.png";
+import github from "./images/github.png";
 
 const GithubRepo = () => {
   const repoName = useRef();
@@ -11,9 +11,14 @@ const GithubRepo = () => {
   const [repoOutput, setRepoOutput] = useState();
 
   useEffect(() => {
-    axios.get(`https://api.github.com/users/${userName}/repos`).then((res) => {
-      setRepoOutput(res.data);
-    });
+    axios
+      .get(`https://api.github.com/users/${userName}/repos`)
+      .then((res) => {
+        setRepoOutput(res.data);
+      })
+      .catch((err) => {
+        alert(`Invalid Repo name: ${userName}`);
+      });
   }, [userName]);
 
   const onSubmitHandler = () => {
@@ -23,7 +28,7 @@ const GithubRepo = () => {
   return (
     <>
       <div className="flex-center mb-3">
-        <img src={github} className='github-logo' alt="github-logo" />
+        <img src={github} className="github-logo" alt="github-logo" />
         <span className="fs-3 fw-bold">Enter your Github Repo Name:</span>
         <input
           ref={repoName}

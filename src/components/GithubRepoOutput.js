@@ -3,7 +3,7 @@ import React from "react";
 const GitgubRepoOutput = ({ repoList }) => {
   const repoMap = repoList?.map((repo) => {
     return (
-      <tbody>
+      <tbody key={repo.id}>
         <tr>
           <td>{repo.name}</td>
           <td>{repo.language}</td>
