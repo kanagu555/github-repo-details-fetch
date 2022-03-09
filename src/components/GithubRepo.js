@@ -33,18 +33,18 @@ const GithubRepo = () => {
         <input
           ref={repoName}
           type="text"
-          className="form-control input-width"
+          className="form-control input-width btn-caret"
         />
       </div>
       <div className="btn-center">
         <button
           onClick={onSubmitHandler}
           type="button"
-          className="btn btn-primary"
+          className="btn btn-primary btn-lg"
         >
           Submit
         </button>
-        <button type="button" className="btn btn-primary">
+        <button type="button" className="btn btn-secondary btn-lg">
           Clear
         </button>
       </div>
