@@ -8,7 +8,7 @@ const GithubRepo = () => {
   const repoName = useRef();
 
   const [userName, setUserName] = useState();
-  const [repoOutput, setRepoOutput] = useState();
+  const [repoOutput, setRepoOutput] = useState(null);
 
   useEffect(() => {
     axios
@@ -16,24 +16,28 @@ const GithubRepo = () => {
       .then((res) => {
         setRepoOutput(res.data);
       })
-      .catch((err) => {
-        alert(`Invalid Repo name: ${userName}`);
+      .catch((error) => {
+        alert(`Invalid username name: ${userName}`);
       });
   }, [userName]);
 
   const onSubmitHandler = () => {
+    console.log(repoName);
     setUserName(repoName.current.value);
   };
+
+
 
   return (
     <>
       <div className="flex-center mb-3">
         <img src={github} className="github-logo" alt="github-logo" />
-        <span className="fs-3 fw-bold">Enter your Github Repo Name:</span>
+        <span className="fs-3 fw-bold">Enter your Github Profile Name:</span>
         <input
           ref={repoName}
           type="text"
-          className="form-control input-width btn-caret"
+          className="form-control input-width input-caret"
+          placeholder="https://github.com/kanagu555"
         />
       </div>
       <div className="btn-center">
@@ -48,6 +52,7 @@ const GithubRepo = () => {
           Clear
         </button>
       </div>
+
       <GithubRepoOutput repoList={repoOutput} />
     </>
   );
